@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
 
-WORKDIR /opt
-RUN git clone https://github.com/rosalindfranklininstitute/volume-segmantics.git
+RUN git clone https://github.com/rosalindfranklininstitute/volume-segmantics.git /opt/volume-segmantics
+WORKDIR /opt/volume-segmantics
 
 RUN pip install --no-cache-dir poetry
 
