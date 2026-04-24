@@ -10,7 +10,7 @@ jobs:
       runs-on: ubuntu-latest
       env:
         REGISTRY: quay.io
-        IMAGE_NAME: rosalindfranklininstitute/volume-segmantics-container
+        IMAGE_NAME: rosalindfranklininstitute/volume-segmantics
       steps:
         - uses: actions/checkout@v6
         - name: Log in to Quay.io
@@ -36,5 +36,5 @@ jobs:
           with:
             context: .
             outputs: ${{ github.ref == 'refs/heads/main' && 'type=docker,type=registry' || 'type=docker' }}
-            tags: ${{ steps.meta.outputs.tags || 'volume-segmantics-container:ci' }}
+            tags: ${{ steps.meta.outputs.tags || 'volume-segmantics:ci' }}
             labels: ${{ steps.meta.outputs.labels }}
